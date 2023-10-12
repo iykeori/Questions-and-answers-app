@@ -9,7 +9,7 @@ import com.iyke.app.util.Grade;
 import com.iyke.app.util.Validation;
 
 public class DisplayService {
-    
+
     //Method and Implementation of displaying Questions and options,
     //prompting the user for answer, comparing answer and asigning marks and grade
     public void display(Map<UUID, Questions> questionsBank){
@@ -27,7 +27,7 @@ public class DisplayService {
 
                     //Inner for-loop to get options that belong to the question
                     for (Map.Entry<Character, String> options : q.getValue().getOptions().entrySet()){
-                        //options.getKey();
+                       
                         System.out.println(options.getKey() + " - " + options.getValue());
                     }
                     //Prompt to input answer
@@ -43,7 +43,7 @@ public class DisplayService {
                             if (answer.trim().equalsIgnoreCase(ans.trim())){
                                 System.out.println("Right Answer");
                                 //setting the mark is answer is correct
-                               q.getValue().setMark(5);
+                               q.getValue().setMark(20);
                                
                             }else{
                                 System.out.println("Wrong Answer");
