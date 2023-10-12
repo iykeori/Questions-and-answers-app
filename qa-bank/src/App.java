@@ -55,25 +55,26 @@ public class App {
             //the answer is validated
             //if right, congratulate user and got to the next question
             //else tell the user they got it wrong and move on the next question still
-            
+
             //at the end of the exam, calculate the score and display it to the user.
             //Optionally, you can grade the user's score
           }
 
     }
-    public String display(Map<UUID, Questions> questionsBank){
+    public void display(Map<UUID, Questions> questionsBank){
         int count = 0;
         Scanner scan = new Scanner(System.in);
         String ans;
-        while (true){
+        double mark = 0.0;
+        while (count != questionsBank.size()){
             try{
                 for (Map.Entry<UUID, Questions> q : questionsBank.entrySet()){
             
-                    System.out.println("# Question: "+ ++count + q.getValue().getQuestion());
-
+                    System.out.println("\n# Question: "+ ++count +" - "+ q.getValue().getQuestion());
+                    System.out.println("\nOptions\n");
                     for (Map.Entry<Character, String> options : q.getValue().getOptions().entrySet()){
-                        options.getKey();
-                        System.out.println("\nOptions\n" + options.getKey() + " - " + options.getValue());
+                        //options.getKey();
+                        System.out.println(options.getKey() + " - " + options.getValue());
                     }
 
                     System.out.println("\n Enter your Answer: ");
@@ -90,8 +91,10 @@ public class App {
                                 System.out.println("Wrong Answer");
                                 q.getValue().setMark(0);
                             }
+                            mark = q.getValue().getMark();
+                            mark += mark;
                         }else {
-                                System.out.println("Invalid Entry. ***Entry A, B OR C***");
+                                System.out.println("Invalid Entry. ***Entry A, B OR C ***");
                                 continue;
                         }
                     } else {
@@ -101,6 +104,7 @@ public class App {
                     }
 
                 }
+                System.out.println("\nYour Total Score is : " + mark);
             }catch (Exception e) {
                 System.out.println("Exception: " + e.getMessage());
                 continue;
