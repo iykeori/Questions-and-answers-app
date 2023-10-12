@@ -10,11 +10,13 @@ public class Database {
     
     private Map<UUID, Questions> questionsBank = new HashMap<>();
 
-
+    //Constructor
     public Database(){
+        //populating the Question Bank
         createQuestionsAndpopulateBank();
     }
 
+    //Method to populate Question Bank
     public void createQuestionsAndpopulateBank(){
         Map<Character, String> optionsQ1 = new HashMap<>();
         optionsQ1.put('A', "Peter Obi");
@@ -62,7 +64,5 @@ public class Database {
     public void setQuestionsBank(Map<UUID, Questions> questionsBank) {
         this.questionsBank = questionsBank;
     }
-
-    
 
 }
