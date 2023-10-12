@@ -22,31 +22,31 @@ public class Database {
         optionsQ1.put('A', "Peter Obi");
         optionsQ1.put('B', "Bola Tinubu");
         optionsQ1.put('C', "Atiku Waziri");
-        Questions q1 = new Questions("Who is the Peoples President of Nigeria?", 'A', 0, optionsQ1, 0);
+        Questions q1 = new Questions("Who is the Peoples President of Nigeria?", 'A', 20, optionsQ1);
 
         Map<Character, String> optionsQ2 = new HashMap<>();
         optionsQ2.put('A', "Apc");
         optionsQ2.put('B', "Labour");
         optionsQ2.put('C', "Pdp");
-        Questions q2 = new Questions("Which Political Party does the Peoples President of Nigeria belong to?", 'B', 0, optionsQ2, 0);
+        Questions q2 = new Questions("Which Political Party does the Peoples President of Nigeria belong to?", 'B', 20, optionsQ2);
 
         Map<Character, String> optionsQ3 = new HashMap<>();
         optionsQ3.put('A', "South East");
         optionsQ3.put('B', "South West");
         optionsQ3.put('C', "North East");
-        Questions q3 = new Questions("Who Geo-political zone is the Peoples President of Nigeria from", 'A', 0, optionsQ3, 0);
+        Questions q3 = new Questions("Who Geo-political zone is the Peoples President of Nigeria from", 'A', 20, optionsQ3);
 
         Map<Character, String> optionsQ4 = new HashMap<>();
         optionsQ4.put('A', "Peter Mbah");
         optionsQ4.put('B', "Nyesom Wike");
         optionsQ4.put('C', "Alex Oti");
-        Questions q4 = new Questions("Who is the Governor of Abia State?", 'C', 0, optionsQ4, 0);
+        Questions q4 = new Questions("Who is the Governor of Abia State?", 'C', 20, optionsQ4);
 
         Map<Character, String> optionsQ5 = new HashMap<>();
         optionsQ5.put('A', "Arise");
         optionsQ5.put('B', "Channel");
         optionsQ5.put('C', "Nta");
-        Questions q5 = new Questions("What is the best News Channel in Nigeria?", 'A', 0, optionsQ5, 0);
+        Questions q5 = new Questions("What is the best News Channel in Nigeria?", 'A', 20, optionsQ5);
 
         //Adding to questionsBank DB
         questionsBank.put(q1.getQuestionId(), q1);

@@ -3,23 +3,20 @@ package com.iyke.app.beans;
 import java.util.Map;
 import java.util.UUID;
 
-public class Questions{
+public class Questions {
 
     private UUID questionId;
     private String question;
     private char answer;
-    private static int serialNo = 0;
     private double mark;
     private Map<Character, String> options;
-    private int isShown = 0;
 
     //constructor
-    public Questions(String question, char answer, double mark, Map<Character, String> options, int isShown) {
+    public Questions(String question, char answer, double mark, Map<Character, String> options) {
         this.question = question;
         this.answer = answer;
         this.mark = mark;
         this.options = options;
-        this.isShown = isShown;
         this.questionId = UUID.randomUUID();
     }
 
@@ -34,10 +31,6 @@ public class Questions{
 
     public void setQuestion(String question) {
         this.question = question;
-    }
-
-    public static int getSerialNo() {
-        return serialNo++;
     }
     
     public char getAnswer() {
@@ -64,18 +57,10 @@ public class Questions{
         this.options = options;
     }
 
-    public int getIsShown() {
-        return isShown;
-    }
-
-    public void setIsShown(int isShown) {
-        this.isShown = isShown;
-    }
-
     @Override
     public String toString() {
         return "Questions [questionId=" + questionId + ", question=" + question + ", answer=" + answer + ", mark="
-                + mark + ", options=" + options + ", isShown=" + isShown + "]";
+                + mark + ", options=" + options + ", isShown=" + "]";
     }
 
     @Override
@@ -89,7 +74,6 @@ public class Questions{
         temp = Double.doubleToLongBits(mark);
         result = prime * result + (int) (temp ^ (temp >>> 32));
         result = prime * result + ((options == null) ? 0 : options.hashCode());
-        result = prime * result + isShown;
         return result;
     }
 
@@ -121,8 +105,7 @@ public class Questions{
                 return false;
         } else if (!options.equals(other.options))
             return false;
-        if (isShown != other.isShown)
-            return false;
+        
         return true;
     }
 
